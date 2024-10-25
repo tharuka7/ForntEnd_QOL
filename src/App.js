@@ -1,32 +1,31 @@
 // src/App.js
 import React from 'react';
-import PredictionForm from './PredictionForm';
-import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LandingPage from './LandingPage';
+import Navbar from './components/Navbar';
+import LandingPage from './components/LandingPage';
+import PredictionForm from './components/PredictionForm';
+import AboutUs from './components/AboutUs';
+import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-      <div>   
+      <div>
+        {/* Navbar displayed across all pages */}
+        <Navbar />
         <div>
           <Routes>
+            {/* Home page */}
             <Route path="/" element={<LandingPage />} />
-            <Route path="/prediction" element={<PredictionForm/>} />
+            {/* Quality of Life Prediction page */}
+            <Route path="/prediction" element={<PredictionForm />} />
+            {/* About Us page */}
+            <Route path="/about" element={<AboutUs />} />
           </Routes>
         </div>
       </div>
     </BrowserRouter>
   );
 }
-
-// <div className="App">
-    //   <header className="App-header">
-    //     <h1>Quality of Life Prediction</h1>
-    //   </header>
-    //   <main>
-    //     <PredictionForm />
-    //   </main>
-    // </div>
 
 export default App;

@@ -1,7 +1,7 @@
 // src/PredictionForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import './App.css';
+import '../App.css';
 
 
 const PredictionForm = () => {
