@@ -1,6 +1,9 @@
 // src/PredictionForm.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import './App.css';
+
 
 const PredictionForm = () => {
   const [formData, setFormData] = useState({
@@ -54,7 +57,11 @@ const PredictionForm = () => {
 
   return (
     <div>
-      <h2>Quality of Life Prediction</h2>
+      <div className="App">
+       <div className="App-header">
+        <h1>Quality of Life Prediction</h1>
+       </div>
+     </div>
       <form onSubmit={handleSubmit}>
         {/* Satisfied With Life 1 */}
         <div>
