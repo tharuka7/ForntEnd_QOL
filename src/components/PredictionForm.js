@@ -1,8 +1,7 @@
 // src/PredictionForm.js
-import React, { useState } from 'react';
-import axios from 'axios';
-import '../App.css';
-
+import React, { useState } from "react";
+import axios from "axios";
+import "../App.css";
 
 const PredictionForm = () => {
   const [formData, setFormData] = useState({
@@ -45,11 +44,14 @@ const PredictionForm = () => {
     setPrediction(null);
 
     try {
-        console.log(formData);
-      const response = await axios.post('http://localhost:8000/predict/', formData);
+      console.log(formData);
+      const response = await axios.post(
+        "http://localhost:8000/predict/",
+        formData
+      );
       setPrediction(response.data["Quality of Life Prediction"]);
     } catch (err) {
-      setError('An error occurred while predicting.');
+      setError("An error occurred while predicting.");
       console.error(err);
     }
   };
@@ -57,14 +59,19 @@ const PredictionForm = () => {
   return (
     <div>
       <div className="App">
-       <div className="App-header">
-        <h1>Quality of Life Prediction</h1>
-       </div>
-     </div>
+        <div className="App-header">
+          <h1>Quality of Life Prediction</h1>
+        </div>
+      </div>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Satisfied With Life 1:</label>
-          <select name="satisfied_with_life_1" value={formData.satisfied_with_life_1} onChange={handleChange} required>
+          <select
+            name="satisfied_with_life_1"
+            value={formData.satisfied_with_life_1}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Agree</option>
             <option value={1}>Disagree</option>
             <option value={2}>Neither agree or disagree</option>
@@ -78,7 +85,12 @@ const PredictionForm = () => {
         {/* Satisfied With Life 2 */}
         <div>
           <label>Satisfied With Life 2:</label>
-          <select name="satisfied_with_life_2" value={formData.satisfied_with_life_2} onChange={handleChange} required>
+          <select
+            name="satisfied_with_life_2"
+            value={formData.satisfied_with_life_2}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Agree</option>
             <option value={1}>Disagree</option>
             <option value={2}>Neither agree or disagree</option>
@@ -92,7 +104,12 @@ const PredictionForm = () => {
         {/* Present Mental Health */}
         <div>
           <label>Present Mental Health:</label>
-          <select name="present_mental_health" value={formData.present_mental_health} onChange={handleChange} required>
+          <select
+            name="present_mental_health"
+            value={formData.present_mental_health}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Excellent</option>
             <option value={1}>Fair</option>
             <option value={2}>Good</option>
@@ -104,7 +121,12 @@ const PredictionForm = () => {
         {/* English Speaking */}
         <div>
           <label>English Speaking:</label>
-          <select name="english_speaking" value={formData.english_speaking} onChange={handleChange} required>
+          <select
+            name="english_speaking"
+            value={formData.english_speaking}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Not at all</option>
             <option value={1}>Not well</option>
             <option value={2}>Very well</option>
@@ -115,7 +137,12 @@ const PredictionForm = () => {
         {/* Income */}
         <div>
           <label>Income:</label>
-          <select name="income" value={formData.income} onChange={handleChange} required>
+          <select
+            name="income"
+            value={formData.income}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>$0 - $9,999</option>
             <option value={1}>$10,000 - $19,999</option>
             <option value={2}>$20,000 - $29,999</option>
@@ -130,7 +157,12 @@ const PredictionForm = () => {
         {/* Present Health */}
         <div>
           <label>Present Health:</label>
-          <select name="present_health" value={formData.present_health} onChange={handleChange} required>
+          <select
+            name="present_health"
+            value={formData.present_health}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Excellent</option>
             <option value={1}>Fair</option>
             <option value={2}>Good</option>
@@ -142,7 +174,12 @@ const PredictionForm = () => {
         {/* Satisfaction With Housing */}
         <div>
           <label>Satisfaction With Housing:</label>
-          <select name="satisfaction_with_housing" value={formData.satisfaction_with_housing} onChange={handleChange} required>
+          <select
+            name="satisfaction_with_housing"
+            value={formData.satisfaction_with_housing}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Not at all</option>
             <option value={1}>Not very much</option>
             <option value={2}>Pretty much</option>
@@ -153,7 +190,12 @@ const PredictionForm = () => {
         {/* Present Oral Health */}
         <div>
           <label>Present Oral Health:</label>
-          <select name="present_oral_health" value={formData.present_oral_health} onChange={handleChange} required>
+          <select
+            name="present_oral_health"
+            value={formData.present_oral_health}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Excellent</option>
             <option value={1}>Fair</option>
             <option value={2}>Good</option>
@@ -165,7 +207,12 @@ const PredictionForm = () => {
         {/* Language */}
         <div>
           <label>Language:</label>
-          <select name="language" value={formData.language} onChange={handleChange} required>
+          <select
+            name="language"
+            value={formData.language}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Chinese Simplified</option>
             <option value={1}>Chinese Traditional</option>
             <option value={2}>Eng_Chinese only</option>
@@ -181,7 +228,12 @@ const PredictionForm = () => {
         {/* Interpretation (Medical) */}
         <div>
           <label>Interpretation (Medical):</label>
-          <select name="interpretation_medical" value={formData.interpretation_medical} onChange={handleChange} required>
+          <select
+            name="interpretation_medical"
+            value={formData.interpretation_medical}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>No</option>
             <option value={1}>Yes</option>
           </select>
@@ -190,7 +242,12 @@ const PredictionForm = () => {
         {/* Communication Problem */}
         <div>
           <label>Communication Problem:</label>
-          <select name="communication_problem" value={formData.communication_problem} onChange={handleChange} required>
+          <select
+            name="communication_problem"
+            value={formData.communication_problem}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>No</option>
             <option value={1}>Yes</option>
           </select>
@@ -199,7 +256,12 @@ const PredictionForm = () => {
         {/* Achieving Ends Meet */}
         <div>
           <label>Achieving Ends Meet:</label>
-          <select name="achieving_ends_meet" value={formData.achieving_ends_meet} onChange={handleChange} required>
+          <select
+            name="achieving_ends_meet"
+            value={formData.achieving_ends_meet}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>No</option>
             <option value={1}>Yes</option>
           </select>
@@ -208,7 +270,12 @@ const PredictionForm = () => {
         {/* Familiarity with America */}
         <div>
           <label>Familiarity with America:</label>
-          <select name="familiarity_with_america" value={formData.familiarity_with_america} onChange={handleChange} required>
+          <select
+            name="familiarity_with_america"
+            value={formData.familiarity_with_america}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>High</option>
             <option value={1}>Low</option>
             <option value={2}>Very high</option>
@@ -219,7 +286,12 @@ const PredictionForm = () => {
         {/* English Difficulties */}
         <div>
           <label>English Difficulties:</label>
-          <select name="english_difficulties" value={formData.english_difficulties} onChange={handleChange} required>
+          <select
+            name="english_difficulties"
+            value={formData.english_difficulties}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Much</option>
             <option value={1}>Not at all</option>
             <option value={2}>Not much</option>
@@ -230,7 +302,12 @@ const PredictionForm = () => {
         {/* Ethnicity */}
         <div>
           <label>Ethnicity:</label>
-          <select name="ethnicity" value={formData.ethnicity} onChange={handleChange} required>
+          <select
+            name="ethnicity"
+            value={formData.ethnicity}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Asian Indian</option>
             <option value={1}>Chinese</option>
             <option value={2}>Filipino</option>
@@ -243,7 +320,12 @@ const PredictionForm = () => {
         {/* Small Businesses */}
         <div>
           <label>Small Businesses:</label>
-          <select name="small_businesses" value={formData.small_businesses} onChange={handleChange} required>
+          <select
+            name="small_businesses"
+            value={formData.small_businesses}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Excellent</option>
             <option value={1}>Fair</option>
             <option value={2}>Good</option>
@@ -254,7 +336,12 @@ const PredictionForm = () => {
         {/* Religious Attendance */}
         <div>
           <label>Religious Attendance:</label>
-          <select name="religious_attendance" value={formData.religious_attendance} onChange={handleChange} required>
+          <select
+            name="religious_attendance"
+            value={formData.religious_attendance}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>A few times a year</option>
             <option value={1}>Never</option>
             <option value={2}>Once or twice a month</option>
@@ -265,7 +352,12 @@ const PredictionForm = () => {
         {/* Parks and Recs */}
         <div>
           <label>Parks and Recs:</label>
-          <select name="parks_and_recs" value={formData.parks_and_recs} onChange={handleChange} required>
+          <select
+            name="parks_and_recs"
+            value={formData.parks_and_recs}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Never used</option>
             <option value={1}>Not at all satisfied</option>
             <option value={2}>Not very much satisfied</option>
@@ -277,7 +369,12 @@ const PredictionForm = () => {
         {/* Place to Work */}
         <div>
           <label>Place to Work:</label>
-          <select name="place_to_work" value={formData.place_to_work} onChange={handleChange} required>
+          <select
+            name="place_to_work"
+            value={formData.place_to_work}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Excellent</option>
             <option value={1}>Fair</option>
             <option value={2}>Good</option>
@@ -288,7 +385,12 @@ const PredictionForm = () => {
         {/* Airport */}
         <div>
           <label>Airport:</label>
-          <select name="airport" value={formData.airport} onChange={handleChange} required>
+          <select
+            name="airport"
+            value={formData.airport}
+            onChange={handleChange}
+            required
+          >
             <option value={0}>Never used</option>
             <option value={1}>Not at all satisfied</option>
             <option value={2}>Not very much satisfied</option>
