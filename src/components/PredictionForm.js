@@ -62,7 +62,6 @@ const PredictionForm = () => {
        </div>
      </div>
       <form onSubmit={handleSubmit}>
-        {/* Satisfied With Life 1 */}
         <div>
           <label>Satisfied With Life 1:</label>
           <select name="satisfied_with_life_1" value={formData.satisfied_with_life_1} onChange={handleChange} required>
