@@ -1,6 +1,6 @@
 // src/PredictionForm.js
-import React, { useState } from 'react';
 import axios from 'axios';
+import React, { useState } from 'react';
 import '../App.css';
 
 
@@ -46,7 +46,7 @@ const PredictionForm = () => {
 
     try {
         console.log(formData);
-      const response = await axios.post('http://localhost:8000/predict/', formData);
+      const response = await axios.post('https://projectqol-backend-c9cngqfvbzhwdsa5.canadacentral-01.azurewebsites.net/predict/', formData);
       setPrediction(response.data["Quality of Life Prediction"]);
     } catch (err) {
       setError('An error occurred while predicting.');
@@ -62,7 +62,6 @@ const PredictionForm = () => {
        </div>
      </div>
       <form onSubmit={handleSubmit}>
-        {/* Satisfied With Life 1 */}
         <div>
           <label>Satisfied With Life 1:</label>
           <select name="satisfied_with_life_1" value={formData.satisfied_with_life_1} onChange={handleChange} required>

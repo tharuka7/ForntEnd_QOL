@@ -14,17 +14,21 @@ const AboutUs = () => {
         color: '#333',
       }}
     >
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#118f06' }}>About Us</h1>
+      <h1 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#118f06' }}>About Data Set</h1>
       <p style={{ fontSize: '1.2rem', marginBottom: '20px' }}>
-        We are a dedicated team of experts committed to providing tools and insights that help improve
-        the quality of life through predictive data analysis.
+        This website uses data from the <a href="https://catalog.data.gov/dataset/final-report-of-the-asian-american-quality-of-life-aaqol" target="_blank" rel="noopener noreferrer" style={{ color: '#118f06', textDecoration: 'none' }}>
+        Final Report of the Asian American Quality of Life (AAQoL)</a>.
+      </p>
+    
+      <p style={{ fontSize: '1rem', color: '#666' }}>
+        The U.S. Census defines Asian Americans as individuals having origins in any of the original peoples of the Far East, Southeast Asia, or the Indian subcontinent (U.S. Office of Management and Budget, 1997). Asian Americans are the fastest-growing minority group in the United States. Their growth rate of 42.9% between 2000 and 2010 is notable, compared to the U.S. population's overall growth of 9.3%.
       </p>
       <p style={{ fontSize: '1rem', color: '#666' }}>
-        Our goal is to leverage data and advanced analytics to offer solutions that empower individuals and
-        organizations to make informed, impactful decisions.
+        Currently, Asian Americans make up 5.6% of the U.S. population and are projected to reach 10% by 2050. Their unique challenges as a rapidly growing immigrant group highlight the need for better understanding of their social and health needs.
       </p>
     </div>
   );
 };
 
 export default AboutUs;
+
