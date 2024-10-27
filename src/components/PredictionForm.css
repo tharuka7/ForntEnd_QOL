@@ -1,3 +1,4 @@
+/* PredictionForm.css */
 /* Add this to set the background image for the entire app */
 .App {
   background-image: url('./img/qol_bg.jpg');
@@ -5,15 +6,101 @@
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
+.App-h{
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
 /* Style the form to ensure readability over the background */
+/* General Form Container */
 form {
-  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: auto;
   padding: 20px;
+  background-color: #f9f9f9;
   border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Individual Input Groups */
+form div {
+  margin-bottom: 15px;
+}
+
+/* Labels */
+form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+/* Select Elements */
+form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  font-size: 16px;
+}
+
+/* Submit Button */
+form button {
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+/* Prediction and Error Message */
+p {
+  font-size: 18px;
+  color: #444;
+  text-align: center;
+}
+
+/* Error Message Styling */
+p.error {
+  color: #ff4d4d;
+}
+
+.prediction-container {
+  background-color: #118f06;
+  padding: 5px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.prediction-result {
+  font-size: 1.2em;
+  color: white;
+}
+
+.error-container {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.error-message {
+  color: #d9534f;
+  font-weight: bold;
 }

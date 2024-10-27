@@ -1,8 +1,7 @@
 // src/PredictionForm.js
 import axios from 'axios';
 import React, { useState } from 'react';
-import '../App.css';
-
+import '../components/PredictionForm.css'
 
 const PredictionForm = () => {
   const [formData, setFormData] = useState({
@@ -55,8 +54,8 @@ const PredictionForm = () => {
   };
 
   return (
-    <div>
-      <div className="App">
+    <div className='App'>
+      <div className="App-h">
        <div className="App-header">
         <h1>Quality of Life Prediction</h1>
        </div>
@@ -300,8 +299,19 @@ const PredictionForm = () => {
         <button type="submit">Predict</button>
       </form>
 
-      {prediction && <p>Predicted Quality of Life: {prediction}</p>}
-      {error && <p>{error}</p>}
+      {prediction && (
+  <div className="prediction-container">
+    <h3>Predicted Quality of Life</h3>
+    <p className="prediction-result">{prediction}</p>
+  </div>
+)}
+
+{error && (
+  <div className="error-container">
+    <p className="error-message">{error}</p>
+  </div>
+)}
+
     </div>
   );
 };
