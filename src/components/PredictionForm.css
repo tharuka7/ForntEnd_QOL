@@ -19,6 +19,7 @@
 /* Style the form to ensure readability over the background */
 /* General Form Container */
 form {
+  opacity: 80%;
   display: flex;
   flex-direction: column;
   max-width: 600px;
