@@ -22,7 +22,11 @@ function LandingPage() {
 
     <div className="landing-page">
 
+<<<<<<< HEAD
 <div style={{ border: '1px solid black', padding: '20px', width: '1000px', margin: '20px auto', textAlign: 'center' }}>
+=======
+        <div style={{ border: '1px solid black', padding: '20px', width: '1000px', margin: 'auto', textAlign: 'center', marginTop: '20px' }}>
+>>>>>>> be91299f91f8af3b7f37b6f3e12b5551ef63f534
     <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', marginBottom: '10px' }}>
         <div>Survey Count: 2609</div>
         <div>Country: USA</div>
@@ -31,7 +35,19 @@ function LandingPage() {
         <div>Target Audience: Asian Americans</div>
         <div>Location: Austin</div>
     </div>
+<<<<<<< HEAD
     <h1>Statistics of the Survey</h1>
+=======
+    <h3>Statistics of the Data Set</h3>
+    
+    <div style={{ display: 'flex', justifyContent: 'space-around', width: '1000px' }}>
+        <div style={{ border: '1px solid black', padding: '10px', marginRight: '10px' }}>
+            <img width={950} src={png1} alt="placeholder" />
+
+        </div>
+       
+    </div>
+>>>>>>> be91299f91f8af3b7f37b6f3e12b5551ef63f534
 </div>
 
 
