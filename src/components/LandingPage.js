@@ -15,6 +15,7 @@ function LandingPage() {
 
     
     <div className="landing-page">
+
         <div style={{ border: '1px solid black', padding: '20px', width: '1000px', margin: 'auto', textAlign: 'center', marginTop: '20px' }}>
     <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', marginBottom: '10px' }}>
         <div>Survey Count: 2609</div>
@@ -29,6 +30,7 @@ function LandingPage() {
     <div style={{ display: 'flex', justifyContent: 'space-around', width: '1000px' }}>
         <div style={{ border: '1px solid black', padding: '10px', marginRight: '10px' }}>
             <img width={950} src={png1} alt="placeholder" />
+
         </div>
        
     </div>
