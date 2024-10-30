@@ -1,7 +1,7 @@
 // src/components/AboutUs.js
 import React from 'react';
 
-const AboutUs = () => {
+const Home = () => {
   return (
     <div
       style={{
@@ -14,7 +14,7 @@ const AboutUs = () => {
         color: '#333',
       }}
     >
-      <h1 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#118f06' }}>About Data Set</h1>
+      <h1 style={{ fontSize: '2.5rem', marginBottom: '20px', color: '#118f06' }}>Welcome!</h1>
       <p style={{ fontSize: '1.2rem', marginBottom: '20px' }}>
         This website uses data from the <a href="https://catalog.data.gov/dataset/final-report-of-the-asian-american-quality-of-life-aaqol" target="_blank" rel="noopener noreferrer" style={{ color: '#118f06', textDecoration: 'none' }}>
         Final Report of the Asian American Quality of Life (AAQoL)</a>.
@@ -30,5 +30,5 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default Home;
 

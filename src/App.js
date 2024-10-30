@@ -2,9 +2,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import LandingPage from './components/LandingPage';
+import Dashboard from './components/Dashboard';
 import PredictionForm from './components/PredictionForm';
-import AboutUs from './components/AboutUs';
+import Home from './components/Home';
 import './App.css';
 
 function App() {
@@ -16,11 +16,11 @@ function App() {
         <div>
           <Routes>
             {/* Home page */}
-            <Route path="/" element={<LandingPage />} />
+            <Route path="/" element={<Home />} />
             {/* Quality of Life Prediction page */}
             <Route path="/prediction" element={<PredictionForm />} />
             {/* About Us page */}
-            <Route path="/about" element={<AboutUs />} />
+            <Route path="/about" element={<Dashboard />} />
           </Routes>
         </div>
       </div>
