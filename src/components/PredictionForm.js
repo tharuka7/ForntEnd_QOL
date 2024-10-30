@@ -1,30 +1,24 @@
 // src/PredictionForm.js
 import axios from 'axios';
 import React, { useState } from 'react';
-import '../components/PredictionForm.css'
+import '../components/PredictionForm.css';
 
 const PredictionForm = () => {
   const [formData, setFormData] = useState({
-    satisfied_with_life_1: 0,
-    satisfied_with_life_2: 0,
-    present_mental_health: 0,
-    english_speaking: 0,
-    income: 0,
-    present_health: 0,
-    satisfaction_with_housing: 0,
-    present_oral_health: 0,
-    language: 0,
-    interpretation_medical: 0,
-    communication_problem: 0,
-    achieving_ends_meet: 0,
-    familiarity_with_america: 0,
-    english_difficulties: 0,
-    ethnicity: 0,
-    small_businesses: 0,
-    religious_attendance: 0,
-    parks_and_recs: 0,
-    place_to_work: 0,
-    airport: 0,
+    familiarity_with_ethnic_origin: 1,
+    smoke_detector: 0,
+    airport: 1,
+    full_time_employment: 0,
+    access_to_a_computer: 0,
+    student: 0,
+    parks_and_recs: 1,
+    city_effort_satisfaction: 1,
+    nursing_home: 0,
+    ethnicity: 1,
+    public_safety: 1,
+    libraries: 1,
+    home_phone: 0,
+    mobile_devices: 0
   });
 
   const [prediction, setPrediction] = useState(null);
@@ -44,8 +38,8 @@ const PredictionForm = () => {
     setPrediction(null);
 
     try {
-        console.log(formData);
-      const response = await axios.post('https://projectqol-backend-c9cngqfvbzhwdsa5.canadacentral-01.azurewebsites.net/predict/', formData);
+      console.log(formData);
+      const response = await axios.post('http://localhost:8000', formData);
       setPrediction(response.data["Quality of Life Prediction"]);
     } catch (err) {
       setError('An error occurred while predicting.');
@@ -56,231 +50,29 @@ const PredictionForm = () => {
   return (
     <div className='App'>
       <div className="App-h">
-       <div className="App-header">
-        <h1>Quality of Life Prediction</h1>
-       </div>
-     </div>
+        <div className="App-header">
+          <h1>Quality of Life Prediction</h1>
+        </div>
+      </div>
       <form onSubmit={handleSubmit}>
+
+        {/* Familiarity with Ethnic Origin */}
         <div>
-          <label>Satisfied With Life 1:</label>
-          <select name="satisfied_with_life_1" value={formData.satisfied_with_life_1} onChange={handleChange} required>
-            <option value={0}>Agree</option>
-            <option value={1}>Disagree</option>
-            <option value={2}>Neither agree or disagree</option>
-            <option value={3}>Slightly agree</option>
-            <option value={4}>Slightly disagree</option>
-            <option value={5}>Strongly agree</option>
-            <option value={6}>Strongly disagree</option>
+          <label>Familiarity with Ethnic Origin:</label>
+          <select name="familiarity_with_ethnic_origin" value={formData.familiarity_with_ethnic_origin} onChange={handleChange} required>
+            <option value={1}>Very low</option>
+            <option value={2}>Low</option>
+            <option value={3}>High</option>
+            <option value={4}>Very high</option>
           </select>
         </div>
 
-        {/* Satisfied With Life 2 */}
+        {/* Smoke Detector */}
         <div>
-          <label>Satisfied With Life 2:</label>
-          <select name="satisfied_with_life_2" value={formData.satisfied_with_life_2} onChange={handleChange} required>
-            <option value={0}>Agree</option>
-            <option value={1}>Disagree</option>
-            <option value={2}>Neither agree or disagree</option>
-            <option value={3}>Slightly agree</option>
-            <option value={4}>Slightly disagree</option>
-            <option value={5}>Strongly agree</option>
-            <option value={6}>Strongly disagree</option>
-          </select>
-        </div>
-
-        {/* Present Mental Health */}
-        <div>
-          <label>Present Mental Health:</label>
-          <select name="present_mental_health" value={formData.present_mental_health} onChange={handleChange} required>
-            <option value={0}>Excellent</option>
-            <option value={1}>Fair</option>
-            <option value={2}>Good</option>
-            <option value={3}>Poor</option>
-            <option value={4}>Very Good</option>
-          </select>
-        </div>
-
-        {/* English Speaking */}
-        <div>
-          <label>English Speaking:</label>
-          <select name="english_speaking" value={formData.english_speaking} onChange={handleChange} required>
-            <option value={0}>Not at all</option>
-            <option value={1}>Not well</option>
-            <option value={2}>Very well</option>
-            <option value={3}>Well</option>
-          </select>
-        </div>
-
-        {/* Income */}
-        <div>
-          <label>Income:</label>
-          <select name="income" value={formData.income} onChange={handleChange} required>
-            <option value={0}>$0 - $9,999</option>
-            <option value={1}>$10,000 - $19,999</option>
-            <option value={2}>$20,000 - $29,999</option>
-            <option value={3}>$30,000 - $39,999</option>
-            <option value={4}>$40,000 - $49,999</option>
-            <option value={5}>$50,000 - $59,999</option>
-            <option value={6}>$60,000 - $69,999</option>
-            <option value={7}>$70,000 and over</option>
-          </select>
-        </div>
-
-        {/* Present Health */}
-        <div>
-          <label>Present Health:</label>
-          <select name="present_health" value={formData.present_health} onChange={handleChange} required>
-            <option value={0}>Excellent</option>
-            <option value={1}>Fair</option>
-            <option value={2}>Good</option>
-            <option value={3}>Poor</option>
-            <option value={4}>Very Good</option>
-          </select>
-        </div>
-
-        {/* Satisfaction With Housing */}
-        <div>
-          <label>Satisfaction With Housing:</label>
-          <select name="satisfaction_with_housing" value={formData.satisfaction_with_housing} onChange={handleChange} required>
-            <option value={0}>Not at all</option>
-            <option value={1}>Not very much</option>
-            <option value={2}>Pretty much</option>
-            <option value={3}>Very much</option>
-          </select>
-        </div>
-
-        {/* Present Oral Health */}
-        <div>
-          <label>Present Oral Health:</label>
-          <select name="present_oral_health" value={formData.present_oral_health} onChange={handleChange} required>
-            <option value={0}>Excellent</option>
-            <option value={1}>Fair</option>
-            <option value={2}>Good</option>
-            <option value={3}>Poor</option>
-            <option value={4}>Very Good</option>
-          </select>
-        </div>
-
-        {/* Language */}
-        <div>
-          <label>Language:</label>
-          <select name="language" value={formData.language} onChange={handleChange} required>
-            <option value={0}>Chinese Simplified</option>
-            <option value={1}>Chinese Traditional</option>
-            <option value={2}>Eng_Chinese only</option>
-            <option value={3}>English</option>
-            <option value={4}>Gujarati</option>
-            <option value={5}>Hindi</option>
-            <option value={6}>Korean</option>
-            <option value={7}>Tagalog</option>
-            <option value={8}>Viet</option>
-          </select>
-        </div>
-
-        {/* Interpretation (Medical) */}
-        <div>
-          <label>Interpretation (Medical):</label>
-          <select name="interpretation_medical" value={formData.interpretation_medical} onChange={handleChange} required>
+          <label>Smoke Detector:</label>
+          <select name="smoke_detector" value={formData.smoke_detector} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
-          </select>
-        </div>
-
-        {/* Communication Problem */}
-        <div>
-          <label>Communication Problem:</label>
-          <select name="communication_problem" value={formData.communication_problem} onChange={handleChange} required>
-            <option value={0}>No</option>
-            <option value={1}>Yes</option>
-          </select>
-        </div>
-
-        {/* Achieving Ends Meet */}
-        <div>
-          <label>Achieving Ends Meet:</label>
-          <select name="achieving_ends_meet" value={formData.achieving_ends_meet} onChange={handleChange} required>
-            <option value={0}>No</option>
-            <option value={1}>Yes</option>
-          </select>
-        </div>
-
-        {/* Familiarity with America */}
-        <div>
-          <label>Familiarity with America:</label>
-          <select name="familiarity_with_america" value={formData.familiarity_with_america} onChange={handleChange} required>
-            <option value={0}>High</option>
-            <option value={1}>Low</option>
-            <option value={2}>Very high</option>
-            <option value={3}>Very low</option>
-          </select>
-        </div>
-
-        {/* English Difficulties */}
-        <div>
-          <label>English Difficulties:</label>
-          <select name="english_difficulties" value={formData.english_difficulties} onChange={handleChange} required>
-            <option value={0}>Much</option>
-            <option value={1}>Not at all</option>
-            <option value={2}>Not much</option>
-            <option value={3}>Very much</option>
-          </select>
-        </div>
-
-        {/* Ethnicity */}
-        <div>
-          <label>Ethnicity:</label>
-          <select name="ethnicity" value={formData.ethnicity} onChange={handleChange} required>
-            <option value={0}>Asian Indian</option>
-            <option value={1}>Chinese</option>
-            <option value={2}>Filipino</option>
-            <option value={3}>Korean</option>
-            <option value={4}>Other</option>
-            <option value={5}>Vietnamese</option>
-          </select>
-        </div>
-
-        {/* Small Businesses */}
-        <div>
-          <label>Small Businesses:</label>
-          <select name="small_businesses" value={formData.small_businesses} onChange={handleChange} required>
-            <option value={0}>Excellent</option>
-            <option value={1}>Fair</option>
-            <option value={2}>Good</option>
-            <option value={3}>Poor</option>
-          </select>
-        </div>
-
-        {/* Religious Attendance */}
-        <div>
-          <label>Religious Attendance:</label>
-          <select name="religious_attendance" value={formData.religious_attendance} onChange={handleChange} required>
-            <option value={0}>A few times a year</option>
-            <option value={1}>Never</option>
-            <option value={2}>Once or twice a month</option>
-            <option value={3}>Seldom</option>
-          </select>
-        </div>
-
-        {/* Parks and Recs */}
-        <div>
-          <label>Parks and Recs:</label>
-          <select name="parks_and_recs" value={formData.parks_and_recs} onChange={handleChange} required>
-            <option value={0}>Never used</option>
-            <option value={1}>Not at all satisfied</option>
-            <option value={2}>Not very much satisfied</option>
-            <option value={3}>Pretty much satisfied</option>
-            <option value={4}>Very much satisfied</option>
-          </select>
-        </div>
-
-        {/* Place to Work */}
-        <div>
-          <label>Place to Work:</label>
-          <select name="place_to_work" value={formData.place_to_work} onChange={handleChange} required>
-            <option value={0}>Excellent</option>
-            <option value={1}>Fair</option>
-            <option value={2}>Good</option>
-            <option value={3}>Poor</option>
           </select>
         </div>
 
@@ -288,11 +80,126 @@ const PredictionForm = () => {
         <div>
           <label>Airport:</label>
           <select name="airport" value={formData.airport} onChange={handleChange} required>
-            <option value={0}>Never used</option>
             <option value={1}>Not at all satisfied</option>
-            <option value={2}>Not very much satisfied</option>
-            <option value={3}>Pretty much satisfied</option>
+            <option value={2}>Never used</option>
+            <option value={3}>Not very much satisfied</option>
             <option value={4}>Very much satisfied</option>
+            <option value={5}>Pretty much satisfied</option>
+          </select>
+        </div>
+
+        {/* Full Time Employment */}
+        <div>
+          <label>Full Time Employment:</label>
+          <select name="full_time_employment" value={formData.full_time_employment} onChange={handleChange} required>
+            <option value={0}>No</option>
+            <option value={1}>Yes</option>
+          </select>
+        </div>
+
+        {/* Access to a Computer */}
+        <div>
+          <label>Access to a Computer:</label>
+          <select name="access_to_a_computer" value={formData.access_to_a_computer} onChange={handleChange} required>
+            <option value={0}>No</option>
+            <option value={1}>Yes</option>
+          </select>
+        </div>
+
+        {/* Student */}
+        <div>
+          <label>Student:</label>
+          <select name="student" value={formData.student} onChange={handleChange} required>
+            <option value={0}>No</option>
+            <option value={1}>Yes</option>
+          </select>
+        </div>
+
+        {/* Parks and Recs */}
+        <div>
+          <label>Parks and Recs:</label>
+          <select name="parks_and_recs" value={formData.parks_and_recs} onChange={handleChange} required>
+            <option value={1}>Not at all satisfied</option>
+            <option value={2}>Never used</option>
+            <option value={3}>Not very much satisfied</option>
+            <option value={4}>Very much satisfied</option>
+            <option value={5}>Pretty much satisfied</option>
+          </select>
+        </div>
+
+        {/* City Effort Satisfaction */}
+        <div>
+          <label>City Effort Satisfaction:</label>
+          <select name="city_effort_satisfaction" value={formData.city_effort_satisfaction} onChange={handleChange} required>
+            <option value={1}>Very dissatisfied</option>
+            <option value={2}>Somewhat dissatisfied</option>
+            <option value={3}>Neither satisfied nor dissatisfied</option>
+            <option value={4}>Somewhat satisfied</option>
+            <option value={5}>Very satisfied</option>
+          </select>
+        </div>
+
+        {/* Nursing Home */}
+        <div>
+          <label>Nursing Home:</label>
+          <select name="nursing_home" value={formData.nursing_home} onChange={handleChange} required>
+            <option value={0}>No</option>
+            <option value={1}>Yes</option>
+          </select>
+        </div>
+
+        {/* Ethnicity */}
+        <div>
+          <label>Ethnicity:</label>
+          <select name="ethnicity" value={formData.ethnicity} onChange={handleChange} required>
+            <option value={1}>Other</option>
+            <option value={2}>Filipino</option>
+            <option value={3}>Korean</option>
+            <option value={4}>Vietnamese</option>
+            <option value={5}>Asian Indian</option>
+            <option value={6}>Chinese</option>
+          </select>
+        </div>
+
+        {/* Public Safety */}
+        <div>
+          <label>Public Safety:</label>
+          <select name="public_safety" value={formData.public_safety} onChange={handleChange} required>
+            <option value={1}>Not at all satisfied</option>
+            <option value={2}>Never used</option>
+            <option value={3}>Not very much satisfied</option>
+            <option value={4}>Very much satisfied</option>
+            <option value={5}>Pretty much satisfied</option>
+          </select>
+        </div>
+
+        {/* Libraries */}
+        <div>
+          <label>Libraries:</label>
+          <select name="libraries" value={formData.libraries} onChange={handleChange} required>
+            <option value={1}>Not at all satisfied</option>
+            <option value={2}>Never used</option>
+            <option value={3}>Not very much satisfied</option>
+            <option value={4}>Very much satisfied</option>
+            <option value={5}>Pretty much satisfied</option>
+          </select>
+        </div>
+
+        {/* Home Phone */}
+        <div>
+          <label>Home Phone:</label>
+          <select name="home_phone" value={formData.home_phone} onChange={handleChange} required>
+            <option value={0}>No</option>
+            <option value={1}>Yes</option>
+          </select>
+        </div>
+
+        {/* Mobile Devices */}
+        <div>
+          <label>Mobile Devices:</label>
+          <select name="mobile_devices" value={formData.mobile_devices} onChange={handleChange} required>
+            <option value={0}>No</option>
+            <option value={1}>Yes</option>
           </select>
         </div>
 
@@ -300,18 +207,17 @@ const PredictionForm = () => {
       </form>
 
       {prediction && (
-  <div className="prediction-container">
-    <h3>Predicted Quality of Life</h3>
-    <p className="prediction-result">{prediction}</p>
-  </div>
-)}
+        <div className="prediction-container">
+          <h3>Predicted Quality of Life</h3>
+          <p className="prediction-result">{prediction}</p>
+        </div>
+      )}
 
-{error && (
-  <div className="error-container">
-    <p className="error-message">{error}</p>
-  </div>
-)}
-
+      {error && (
+        <div className="error-container">
+          <p className="error-message">{error}</p>
+        </div>
+      )}
     </div>
   );
 };
