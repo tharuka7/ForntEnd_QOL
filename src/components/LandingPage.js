@@ -1,15 +1,15 @@
 // src/LandingPage.js
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import '../App.css';
 import png1 from '../assest/a.png';
 
 function LandingPage() {
-  const navigate = useNavigate();
+//   const navigate = useNavigate();
 
-  const handleButtonClick = () => {
-    navigate('/prediction');
-  };
+//   const handleButtonClick = () => {
+//     navigate('/prediction');
+//   };
 
   return (
 
