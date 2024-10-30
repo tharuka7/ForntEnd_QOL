@@ -18,7 +18,7 @@ function LandingPage() {
       <button onClick={handleButtonClick} className="start-button">
         Start Prediction
       </button>
-      <div style={{ border: '1px solid black', padding: '20px', width: '1000px', margin: 'auto', textAlign: 'center' ,marginTop:'20px'}}>
+      <div style={{  padding: '20px', width: '1000px', margin: 'auto', textAlign: 'center' ,marginTop:'20px'}}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontWeight: 'bold', marginBottom: '10px' }}>
                 <div>Survey Count: 2609</div>
                 <div>Country: USA</div>
