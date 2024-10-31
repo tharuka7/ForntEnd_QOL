@@ -51,14 +51,14 @@ const PredictionForm = () => {
     <div className='App'>
       <div className="App-h">
         <div className="App-header">
-          <h1>Quality of Life Prediction</h1>
+          <h1>Fill the Form Check Your Quality of Life</h1>
         </div>
       </div>
       <form onSubmit={handleSubmit}>
 
         {/* Familiarity with Ethnic Origin */}
         <div>
-          <label>Familiarity with Ethnic Origin:</label>
+          <label>How familiar are you with your ethnic origin?</label>
           <select name="familiarity_with_ethnic_origin" value={formData.familiarity_with_ethnic_origin} onChange={handleChange} required>
             <option value={1}>Very low</option>
             <option value={2}>Low</option>
@@ -69,7 +69,7 @@ const PredictionForm = () => {
 
         {/* Smoke Detector */}
         <div>
-          <label>Smoke Detector:</label>
+          <label>Do you have a smoke detector in your home? </label>
           <select name="smoke_detector" value={formData.smoke_detector} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
@@ -78,7 +78,7 @@ const PredictionForm = () => {
 
         {/* Airport */}
         <div>
-          <label>Airport:</label>
+          <label>How would you rate your satisfaction with your local airport?  </label>
           <select name="airport" value={formData.airport} onChange={handleChange} required>
             <option value={1}>Not at all satisfied</option>
             <option value={2}>Never used</option>
@@ -90,7 +90,7 @@ const PredictionForm = () => {
 
         {/* Full Time Employment */}
         <div>
-          <label>Full Time Employment:</label>
+          <label>Are you currently employed full-time?  </label>
           <select name="full_time_employment" value={formData.full_time_employment} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
@@ -99,7 +99,7 @@ const PredictionForm = () => {
 
         {/* Access to a Computer */}
         <div>
-          <label>Access to a Computer:</label>
+          <label>Do you have access to a computer?   </label>
           <select name="access_to_a_computer" value={formData.access_to_a_computer} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
@@ -108,7 +108,7 @@ const PredictionForm = () => {
 
         {/* Student */}
         <div>
-          <label>Student:</label>
+          <label>Are you currently a student?   </label>
           <select name="student" value={formData.student} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
@@ -117,7 +117,7 @@ const PredictionForm = () => {
 
         {/* Parks and Recs */}
         <div>
-          <label>Parks and Recs:</label>
+          <label>How satisfied are you with parks and recreational facilities in your area?   </label>
           <select name="parks_and_recs" value={formData.parks_and_recs} onChange={handleChange} required>
             <option value={1}>Not at all satisfied</option>
             <option value={2}>Never used</option>
@@ -129,7 +129,7 @@ const PredictionForm = () => {
 
         {/* City Effort Satisfaction */}
         <div>
-          <label>City Effort Satisfaction:</label>
+        <label>How satisfied are you with your city's efforts in community services?   </label>
           <select name="city_effort_satisfaction" value={formData.city_effort_satisfaction} onChange={handleChange} required>
             <option value={1}>Very dissatisfied</option>
             <option value={2}>Somewhat dissatisfied</option>
@@ -141,7 +141,7 @@ const PredictionForm = () => {
 
         {/* Nursing Home */}
         <div>
-          <label>Nursing Home:</label>
+          <label>Do you have access to a nursing home nearby if needed?  </label>
           <select name="nursing_home" value={formData.nursing_home} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
@@ -150,7 +150,7 @@ const PredictionForm = () => {
 
         {/* Ethnicity */}
         <div>
-          <label>Ethnicity:</label>
+          <label>What is your ethnicity?    </label>
           <select name="ethnicity" value={formData.ethnicity} onChange={handleChange} required>
             <option value={1}>Other</option>
             <option value={2}>Filipino</option>
@@ -163,7 +163,7 @@ const PredictionForm = () => {
 
         {/* Public Safety */}
         <div>
-          <label>Public Safety:</label>
+          <label>How would you rate your satisfaction with public safety services in your area?</label>
           <select name="public_safety" value={formData.public_safety} onChange={handleChange} required>
             <option value={1}>Not at all satisfied</option>
             <option value={2}>Never used</option>
@@ -175,7 +175,7 @@ const PredictionForm = () => {
 
         {/* Libraries */}
         <div>
-          <label>Libraries:</label>
+          <label>How satisfied are you with the local library services?  </label>
           <select name="libraries" value={formData.libraries} onChange={handleChange} required>
             <option value={1}>Not at all satisfied</option>
             <option value={2}>Never used</option>
@@ -187,7 +187,7 @@ const PredictionForm = () => {
 
         {/* Home Phone */}
         <div>
-          <label>Home Phone:</label>
+          <label>Do you have a landline home phone?  </label>
           <select name="home_phone" value={formData.home_phone} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
@@ -196,7 +196,7 @@ const PredictionForm = () => {
 
         {/* Mobile Devices */}
         <div>
-          <label>Mobile Devices:</label>
+          <label>Do you use mobile devices?</label>
           <select name="mobile_devices" value={formData.mobile_devices} onChange={handleChange} required>
             <option value={0}>No</option>
             <option value={1}>Yes</option>
